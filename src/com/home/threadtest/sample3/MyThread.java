@@ -1,13 +1,13 @@
-package com.home.threadtest.sample1;
+package com.home.threadtest.sample3;
 
 /**
- * Created by vitaliy on 04.02.15.
+ * Created by go1095 on 2/4/15.
  */
 public class MyThread implements Runnable {
     public Thread thread;
 
     public MyThread(String thrdName) {
-        this.thread = new Thread(this, thrdName);
+        thread = new Thread(this, thrdName);
         thread.start();
     }
 
