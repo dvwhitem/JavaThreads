@@ -12,14 +12,16 @@ public class MoreThreads {
         MyThread myThread2 = new MyThread("Child #2");
         MyThread myThread3 = new MyThread("Child #3");
 
-        for(int i=0; i<50; i++) {
+        do {
             System.out.print(".");
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 System.out.println("Main thread interrupted");
             }
-        }
+        } while(myThread1.thread.isAlive() ||
+                myThread2.thread.isAlive() ||
+                myThread3.thread.isAlive());
 
         System.out.println("Main thrad ending.");
     }
